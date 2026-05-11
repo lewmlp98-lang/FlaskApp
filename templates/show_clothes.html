@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		ПРОЕКТ
+	</title>
+</head>
+
+<body>
+
+
+	<form action="/create_collection" method="POST">
+		<div hidden>
+			<input type="text" name="place" value={{place}}>
+			<input type="text" name="season" value={{season}}>
+		</div>
+
+		<p align="center">
+
+			Выберите предпочтительные вещи верх:<br>
+			{% for item in tops %}
+        	<input type='checkbox' name='tops' value='{{item[1]}}'>{{item[0]}}<br> 
+    		{% endfor %}
+
+    		Выберите предпочтительные вещи низ:<br>
+			{% for item in bot %}
+        	<input type='checkbox' name='bots' value='{{item[1]}}'>{{item[0]}}<br> 
+    		{% endfor %}
+    	</p>
+		
+	  	<p align='center'> 
+			<input type="submit" value="Рассчитать образ">
+	  	</p>
+  	</form>
+
+
+
+	
+
+	
+</body>
+
+
+</html>
